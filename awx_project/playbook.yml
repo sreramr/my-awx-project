@@ -4,7 +4,7 @@
     - community.general
   tasks:
     - name: Ensure the NTP service is enabled and running
-      systemd:
-        name: ntp.service
+      ansible.builtin.service:
+        name: httpd
         state: started
         enabled: yes

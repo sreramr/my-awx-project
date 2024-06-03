@@ -1,0 +1,10 @@
+# awx_project/playbook.yml
+- hosts: all
+  collections:
+    - community.general
+  tasks:
+    - name: Ensure the NTP service is enabled and running
+      ansible.builtin.service:
+        name: ntp
+        state: started
+        enabled: yes

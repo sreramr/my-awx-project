@@ -5,6 +5,6 @@
   tasks:
     - name: Ensure the NTP service is enabled and running
       ansible.builtin.service:
-        name: ntpd
+        name: ntp.service
         state: started
         enabled: yes

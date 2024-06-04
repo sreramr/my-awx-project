@@ -1,5 +1,5 @@
-# Example for systems using init instead of systemd
-- hosts: all
+# awx_project/playbook.yml
+- hosts: localhost
   tasks:
     - name: Ensure the NTP service is enabled and running
       ansible.builtin.service:

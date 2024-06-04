@@ -1,8 +1,8 @@
 # awx_project/playbook.yml
-- hosts: localhost
+- hosts: all
   tasks:
-    - name: Ensure the NTP service is enabled and running
+    - name: Ensure the Apache2 service is enabled and running
       ansible.builtin.service:
-        name: ntp
+        name: apache2
         enabled: yes
         state: started

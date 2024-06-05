@@ -1,5 +1,5 @@
 # awx_project/playbook.yml
-- hosts: all
+- hosts: localhost
   tasks:
     - name: Ensure the Apache HTTP Server is enabled and running
       ansible.builtin.service:

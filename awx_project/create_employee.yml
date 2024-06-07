@@ -2,7 +2,7 @@
 - name: Create employee in MySQL
   hosts: wsl
   collections:
-    - community.general
+    - community.mysql
   vars:
     mysql_hostname: localhost
     mysql_port: 3306
@@ -14,15 +14,9 @@
       firstname: sreram
       lastname: rathnam
       email: sreramrathnam@gmail.com
-      
   tasks:
-    - name: Install MySQL Python package
-      pip:
-        name: pymysql
-        state: present
-
     - name: Create employee in MySQL
-      mysql_query:
+      community.mysql.mysql_query:
         login_host: "{{ mysql_hostname }}"
         login_port: "{{ mysql_port }}"
         login_user: "{{ mysql_root_user }}"

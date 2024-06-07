@@ -1,6 +1,6 @@
 ---
 - name: Create employee in MySQL
-  hosts: localhost
+  hosts: wsl
   vars:
     mysql_hostname: localhost
     mysql_port: 3306

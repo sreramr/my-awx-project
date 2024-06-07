@@ -2,7 +2,7 @@
 - name: Create employee in MySQL
   hosts: wsl
   collections:
-    - community.mysql
+    - community.general
   vars:
     mysql_hostname: localhost
     mysql_port: 3306

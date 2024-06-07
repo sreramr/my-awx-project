@@ -9,9 +9,9 @@
     mysql_db_name: ai_users
     mysql_table_name: employee
     employee_data:
-      firstname: John
-      lastname: Doe
-      email: john.doe@example.com
+      firstname: sreram
+      lastname: rathnam
+      email: sreramrathnam@gmail.com
   tasks:
     - name: Install MySQL Python package
       pip:

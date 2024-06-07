@@ -1,0 +1,30 @@
+---
+- name: Create employee in MySQL
+  hosts: localhost
+  vars:
+    mysql_hostname: localhost
+    mysql_port: 3306
+    mysql_root_user: root
+    mysql_root_password: rootpassword
+    mysql_db_name: ai_users
+    mysql_table_name: employee
+    employee_data:
+      firstname: John
+      lastname: Doe
+      email: john.doe@example.com
+  tasks:
+    - name: Install MySQL Python package
+      pip:
+        name: pymysql
+        state: present
+
+    - name: Create employee in MySQL
+      mysql_query:
+        login_host: "{{ mysql_hostname }}"
+        login_port: "{{ mysql_port }}"
+        login_user: "{{ mysql_root_user }}"
+        login_password: "{{ mysql_root_password }}"
+        login_db: "{{ mysql_db_name }}"
+        query: >
+          INSERT INTO {{ mysql_table_name }} (firstname, lastname, email)
+          VALUES ('{{ employee_data.firstname }}', '{{ employee_data.lastname }}', '{{ employee_data.email }}')
